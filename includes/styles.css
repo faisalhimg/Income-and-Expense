@@ -1,0 +1,272 @@
+:root {
+  --primary-bg: #fbf8f6;
+  --primary-bg-dark: #f0e8e2;
+  --primary-bg-darker: #e0d6cf;
+  --primary-text: #333333;
+  --primary-accent: #5d9b9b;
+  --primary-accent-dark: #3a7a7a;
+  --white: #ffffff;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 1.8rem;
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+ 
+ /* Main Styles */
+ body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #fbf8f6;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "header header header header"
+    "stat1 stat2 stat3 stat4"
+    "content content content content"
+    "footer footer footer footer";
+  min-height: 100vh;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.header {
+  grid-area: header;
+  background: #5d9b9b;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stat-card h2 {
+  color: #3a7a7a;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card small {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 1.5rem;
+}
+
+.content-box {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.transactions {
+  height: 790px;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: auto;
+  
+}
+
+.footer {
+  grid-area: footer;
+  background: #343a40;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Form Styles */
+.form-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  align-items: center;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #444;
+}
+
+input, select, textarea {
+  align-items: center;
+  width: 90%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #3a7a7a;;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+button[type="submit"] {
+  background: #5d9b9b;
+  color: #f0e8e2;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #3a7a7a;
+}
+
+/* Transactions List */
+.transaction-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-item {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-amount {
+  font-weight: 600;
+}
+
+.income {
+  color: #28a745;
+}
+
+.expense {
+  color: #dc3545;
+}
+
+.download-link {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--primary-accent);
+  color: var(--white);
+  border-radius: var(--border-radius-sm);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+a.download-link {
+  text-decoration: none;
+  color: white;
+}
+
+a.download-link:hover {
+  text-decoration: underline;
+  background-color: var(--primary-accent-dark);
+}
+
+a {
+  text-decoration: none;            /* remove underline */
+  color: #000;                      /* set default link color (black in this case) */
+  outline: none;                    /* remove focus ring */
+  background: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+a:visited {
+  color: #000;                      /* make visited links same color as unvisited */
+}
+
+a:active {
+  color: #000;                      /* prevent color change when link is being clicked */
+  background: none;
+  outline: none;
+}
+/* Responsive Design */
+@media (max-width: 1014px) {
+  .container {
+    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "stat1 stat2"
+      "stat3 stat4"
+      "content content"
+      "footer footer";
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-rows: auto auto auto auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "stat1"
+      "stat2"
+      "stat3"
+      "stat4"
+      "content"
+      "footer";
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
